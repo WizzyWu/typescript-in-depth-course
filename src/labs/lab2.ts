@@ -1,6 +1,6 @@
 // ========= Types
 // T. 02.01.1
-type Book = {
+export type Book = {
     id: number;
     title: string;
     category: Category;
@@ -21,7 +21,7 @@ enum Category {
 // ========= Functions
 // T. 02.01.1
 // T. 02.02.1
-function getAllBooks(): readonly Book[] {
+export function getAllBooks(): readonly Book[] {
     const books: readonly Book[] = [
         { id: 1, title: 'Refactoring JavaScript', category: Category.JavaScript, author: 'Evan Burchard', available: true},
         { id: 2, title: 'JavaScript Testing', category: Category.JavaScript, author: 'Liang Yuxian Eugene', available: false },
@@ -34,7 +34,8 @@ function getAllBooks(): readonly Book[] {
 
 // T. 02.01.2
 // T. 02.02.2
-function logFirstAvailable(books: readonly Book[]): void {
+// T. 03.02.3
+export function logFirstAvailable(books: readonly Book[] = getAllBooks()): void {
     console.log(`Number of Books: ${books.length}`);
 
     const title = books.find(({ available }) => available)?.title;
@@ -43,7 +44,8 @@ function logFirstAvailable(books: readonly Book[]): void {
 }
 
 // T. 02.01.4
-function getBookTitlesByCategory(category: Category): string[] {
+// T 03.02.2
+export function getBookTitlesByCategory(category: Category = Category.JavaScript): string[] {
     const books = getAllBooks();
 
     return books.filter(({ category: cat }) => cat === category).map(({ title }) => title);

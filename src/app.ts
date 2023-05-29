@@ -1,4 +1,5 @@
 import { lab2 } from './labs/lab2';
+import { lab3 } from './labs/lab3';
 
 showHello('greeting', 'TypeScript');
 
@@ -7,4 +8,5 @@ function showHello(divName: string, name: string) {
     elt.innerText = `Hello from ${name}`;
 }
 
-lab2();
+// lab2();
+lab3();
