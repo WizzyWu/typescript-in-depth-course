@@ -20,7 +20,8 @@ function createCustomer(name: string, age?: number, city?: string): void {
 }
 
 // T 03.02.4
-function getBookByID(id: number): Book {
+// T 04.01.3
+function getBookByID(id: Book['id']): Book | undefined {
     const books = getAllBooks();
 
     return books.find(book => book.id === id);

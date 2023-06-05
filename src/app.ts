@@ -1,5 +1,6 @@
 import { lab2 } from './labs/lab2';
 import { lab3 } from './labs/lab3';
+import { lab4 } from './labs/lab4';
 
 showHello('greeting', 'TypeScript');
 
@@ -9,4 +10,5 @@ function showHello(divName: string, name: string) {
 }
 
 // lab2();
-lab3();
+// lab3();
+lab4();

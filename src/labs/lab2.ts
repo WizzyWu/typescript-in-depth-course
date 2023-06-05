@@ -1,15 +1,31 @@
+import { DamageLogger } from './lab4';
+
 // ========= Types
 // T. 02.01.1
-export type Book = {
+// export type Book = {
+//     id: number;
+//     title: string;
+//     category: Category;
+//     author: string;
+//     available: boolean;
+// };
+
+// T. 04.01.1
+export interface Book {
     id: number;
     title: string;
     category: Category;
     author: string;
     available: boolean;
-};
+    // T 04.01.7
+    pages?: number;
+    // T 04.01.9
+    // T 04.02.2
+    markDamaged?: DamageLogger;
+}
 
 // T. 02.01.3
-enum Category {
+export enum Category {
     JavaScript,
     CSS,
     HTML,
