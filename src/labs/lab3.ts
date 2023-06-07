@@ -1,5 +1,6 @@
 /* eslint-disable no-redeclare */
 import { Book, getBookTitlesByCategory, logFirstAvailable, getAllBooks } from './lab2';
+import { BookOrUndefined } from './lab5';
 
 // T 03.01.1
 function createCustomerID(name: string, id: number): string {
@@ -21,7 +22,8 @@ function createCustomer(name: string, age?: number, city?: string): void {
 
 // T 03.02.4
 // T 04.01.3
-function getBookByID(id: Book['id']): Book | undefined {
+// T 05.05.4
+function getBookByID(id: Book['id']): BookOrUndefined {
     const books = getAllBooks();
 
     return books.find(book => book.id === id);

@@ -12,7 +12,7 @@ export interface DamageLogger {
 }
 
 // T 04.03.1
-interface Person {
+export interface Person {
     name: string;
     email: string;
 }
@@ -23,7 +23,7 @@ interface Author extends Person {
 }
 
 // T 04.03.3
-interface Librarian extends Person {
+export interface Librarian extends Person {
     department: string;
     assistCustomer: (custName: string, bookTitle: string) => void;
 }
