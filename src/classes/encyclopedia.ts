@@ -1,4 +1,4 @@
-import { ReferenceItem } from '../modules/classes';
+import { ReferenceItem } from './reference-item';
 // T 6.03.1
 export default class Encyclopedia extends ReferenceItem {
 

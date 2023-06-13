@@ -1,8 +1,6 @@
-// T 06.02.3
 /* eslint-disable no-underscore-dangle */
-import * as Interfaces from './interfaces';
-
-abstract class ReferenceItem {
+// T 06.04.2
+export abstract class ReferenceItem {
     // title: string;
     // year: number;
 
@@ -42,17 +40,3 @@ abstract class ReferenceItem {
 
     abstract printCitation(): void;
 }
-
-class UniversityLibrarian implements Interfaces.Librarian, Interfaces.A {
-    name: string;
-    email: string;
-    department: string;
-
-    a: number = 1;
-
-    assistCustomer(custName: string, bookTitle: string): void {
-        console.log(`${this.name} is assisting ${custName} with the book ${bookTitle}`);
-    }
-}
-
-export { ReferenceItem, UniversityLibrarian };

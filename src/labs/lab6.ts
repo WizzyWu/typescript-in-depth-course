@@ -1,6 +1,5 @@
-import { UniversityLibrarian } from '../modules/classes';
+import { UL, RefBook } from '../classes';
 import { printRefBook } from '../modules/functions';
-import RefBook from '../classes/encyclopedia';
 
 export function lab6 (): void {
     // T 06.03.6
@@ -9,7 +8,7 @@ export function lab6 (): void {
     printRefBook(refBook);
 
     // T 06.03.7
-    console.log('====== Task 06.03.7')
-    const ul = new UniversityLibrarian();
+    console.log('====== Task 06.03.7');
+    const ul = new UL.UniversityLibrarian();
     // printRefBook(ul);
 }

@@ -1,4 +1,4 @@
-import { UniversityLibrarian } from '../modules/classes';
+import { UL } from '../classes';
 import { Category } from '../modules/enums';
 import { setDefaultConfig } from '../modules/functions';
 import { A, Librarian, TOptions } from '../modules/interfaces';
@@ -37,7 +37,7 @@ export function lab5 (): void {
 
     // Task 05.04.2
     console.log('=== T 05.04.2');
-    const favoriteLibrarian: Librarian & A = new UniversityLibrarian();
+    const favoriteLibrarian: Librarian & A = new UL.UniversityLibrarian();
     favoriteLibrarian.name = 'Anna';
     favoriteLibrarian.assistCustomer('Boris', 'All about TypeScript');
     favoriteLibrarian.a = 2;
