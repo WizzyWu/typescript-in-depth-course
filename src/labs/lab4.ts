@@ -1,44 +1,7 @@
-import { Book } from './lab2';
-import { Category } from './lab2';
+import { Category } from '../modules/enums';
+import { getProperty, printBook } from '../modules/functions';
+import { Author, Book, Librarian } from '../modules/interfaces';
 
-// T 04.01.4
-function printBook(book: Book): void {
-    console.log(`${book.title} by ${book.author}`);
-}
-
-// T 04.02.1
-export interface DamageLogger {
-    (reason: string): void;
-}
-
-// T 04.03.1
-export interface Person {
-    name: string;
-    email: string;
-}
-
-// T 04.03.2
-interface Author extends Person {
-    numBooksPublished: number;
-}
-
-// T 04.03.3
-export interface Librarian extends Person {
-    department: string;
-    assistCustomer: (custName: string, bookTitle: string) => void;
-}
-
-// T 04.05.1
-type BookProperties = keyof Book;
-
-// Task 04.05.2
-function getProperty(book: Book, prop: BookProperties): any {
-    const value = book[prop];
-
-    return typeof value === 'function' ? value.name : value;
-}
-
-// =======================
 export function lab4 (): void {
     // T 04.01.5
     // T 04.01.8
