@@ -5,3 +5,6 @@ export * as UL from './university-librarian';
 
 // T 06.05.2
 export * from './reader';
+
+// T 06.06.2
+export type { Library } from './library';

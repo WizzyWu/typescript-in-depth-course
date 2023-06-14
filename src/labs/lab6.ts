@@ -1,5 +1,6 @@
-import { UL, RefBook } from '../classes';
+import { UL, RefBook, Library } from '../classes';
 import { printRefBook } from '../modules/functions';
+export type { Library } from '../classes/library';
 
 export async function lab6 (): Promise<void> {
     // T 06.03.6
@@ -30,4 +31,16 @@ export async function lab6 (): Promise<void> {
         reader.name = 'Boris';
         console.log(reader);
     }
+
+    // T 06.06.3, 06.06.4
+    // const lib: Library = new Library();
+
+    // T 06.06.5
+    console.log('Task 06.06.5');
+    let lib: Library = {
+        id: 1,
+        name: 'Anna',
+        address: 'Kyiv...',
+    };
+    console.log(lib);
 }
