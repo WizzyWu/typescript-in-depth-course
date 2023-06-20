@@ -5,6 +5,8 @@ enum Category {
     HTML,
     TypeScript,
     Angular,
+    // T 07.01.3
+    Software,
 }
 
 export { Category };

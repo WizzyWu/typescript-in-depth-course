@@ -154,6 +154,19 @@ function printRefBook(data: any): void {
     data.printItem();
 }
 
+// ======================== Lab 7
+// T 07.01.1
+export function purge<T>(inventory: Array<T>): T[] {
+    return inventory.slice(2);
+}
+
+// 07.03.6
+export function getObjectProperty <Tobject extends object, TKey extends keyof Tobject> (obj: Tobject, prop: TKey): Tobject[TKey] | string {
+    const value = obj[prop];
+
+    return typeof value === 'function' ? value.name : value;
+}
+
 export {
     // Lab 2
     calcTotalPages,

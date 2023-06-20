@@ -38,4 +38,15 @@ interface TOptions {
     speed?: number;
 }
 
+// T 07.02.1
+export interface Magazine {
+    title: string;
+    publisher: string;
+}
+
+// T 07.03.2
+export interface ShelfItem {
+    title: string;
+}
+
 export { A, Author, Book, Librarian, Person, TOptions, DamageLogger as Logger };
