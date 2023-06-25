@@ -1,4 +1,7 @@
 /* eslint-disable no-underscore-dangle */
+
+import { timeout } from "../modules/decorators";
+
 // T 06.04.2
 export abstract class ReferenceItem {
     // title: string;
@@ -15,6 +18,8 @@ export abstract class ReferenceItem {
         this.#id = id;
     }
 
+    // T 08.04.3
+    // @timeout(5000)
     printItem(): void {
         console.log(`${this.title} was published in ${this.year}`);
         console.log(`Department: ${Object.getPrototypeOf(this).constructor.department}`);
