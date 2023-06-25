@@ -1,7 +1,7 @@
 /* eslint-disable no-redeclare */
 
 import { Category } from './enums';
-import { Book, TOptions } from './interfaces';
+import { Book, Callback, LibMgrCallback, TOptions } from './interfaces';
 import { BookOrUndefined, BookProperties } from './types';
 import RefBook from '../classes/encyclopedia';
 
@@ -164,7 +164,7 @@ export function purge<T>(inventory: Array<T>): T[] {
 export function getObjectProperty <Tobject extends object, TKey extends keyof Tobject> (obj: Tobject, prop: TKey): Tobject[TKey] | string {
     const value = obj[prop];
 
-    return typeof value === 'function' ? value.name : value;
+    return typeof value === 'function' ? value['name'] : value;
 }
 
 // 08.06.2
@@ -200,6 +200,55 @@ export function makeProperty<T>(
         configurable: true
     });
 };
+
+// T 09.01.3
+// export function getBooksByCategory(category: Category, callback: LibMgrCallback): void {
+export function getBooksByCategory(category: Category, callback: Callback<string[]>): void {
+    setTimeout(() => {
+        try {
+            const titles = getBookTitlesByCategory(category);
+            if (titles.length > 0) {
+                callback(null, titles);
+            } else {
+                throw new Error('No Books Found');
+            }
+        } catch (err) {
+            callback(err, null);
+        }
+    }, 2000);
+}
+
+// T 09.01.4
+export function logCategorySearch(err: Error | null, titles: string[] | null): void {
+    if (err) {
+        console.log(err.message);
+    } else {
+        console.log(titles);
+    }
+}
+
+// T 09.02.1
+export function getBooksByCategoryPromise(category: Category): Promise<string[]> {
+    // T 09.02.2
+    const p: Promise<string[]> = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const titles = getBookTitlesByCategory(category);
+            if (titles.length > 0) {
+                resolve(titles);
+            } else {
+                reject('No Books Found');
+            }
+        }, 2000);
+    });
+
+    return p;
+}
+
+// T 09.03.1
+export async function logSearchResults(category: Category) {
+    const titles = await getBooksByCategoryPromise(category);
+    console.log('Titles length: ', titles.length);
+}
 
 export {
     // Lab 2

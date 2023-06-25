@@ -1,5 +1,5 @@
 // T 06.02.4
-import { createCustomer, createCustomerID } from './functions';
+import { createCustomer, createCustomerID, getBooksByCategoryPromise } from './functions';
 import { Author, Book, Person } from './interfaces';
 
 type Fn1 = Parameters<typeof createCustomerID>;
@@ -67,3 +67,9 @@ export function update<T extends boolean> (isStringOutput: T): Result<T> {
         return 123 as Result<T>;
     }
 }
+
+// T 09.02.5
+export type Unpromisify<T> = T extends Promise<infer R> ? R : never;
+
+// T 09.02.6, 09.02.7
+export type A = Unpromisify<ReturnType<typeof getBooksByCategoryPromise>>;
